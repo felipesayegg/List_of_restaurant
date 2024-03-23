@@ -1,23 +1,44 @@
 <!-- app/views/restaurants/index.html.erb -->
 <!-- app/views/restaurants/index.html.erb -->
-<div class="container">
+<div class="container mt-5">
   <h1 class="text-center mt-3">Lista de Restaurantes</h1>
-  <div class="row">
-    <% @restaurants.each do |restaurant| %>
-    <div class="col-12 col-lg-4 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <ul>
-              <li>
-                <strong>Nome:</strong> <%= restaurant.name %>
-              </li>
-            </ul>
-          </div>
-          <%= link_to "Sobre", restaurant_path(restaurant), class: "btn btn-primary" %>
-        </div>
-      </div>
-        <% end %>
-    </div>
 
-    <%= link_to 'Create a Restaurant', new_restaurant_path, class: 'btn btn-primary' %>
+  <div class="row">
+
+  <% @restaurants.each do |restaurant| %>
+  <div class="col-4">
+
+  <div class="card mt-3" style="width: 18rem;">
+    <%= image_tag 'restaurant.jpg'%>
+    <div class="card-body">
+      <h5 class="card-title"><%= restaurant.name %></h5>
+      <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+    </ul>
+    <div class="card-body">
+      <%= link_to "Sobre", restaurant_path(restaurant) %>
+      <%# <a href="#" class="card-link">Another link</a> %>
+    </div>
   </div>
+
+  </div>
+
+  <% end %>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
