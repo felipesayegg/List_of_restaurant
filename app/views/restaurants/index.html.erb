@@ -1,21 +1,23 @@
 <!-- app/views/restaurants/index.html.erb -->
 <!-- app/views/restaurants/index.html.erb -->
 <div class="container">
-<h1 class="text-center mt-3">Lista de Restaurantes</h1>
-  <% @restaurants.each do |restaurant| %>
-  <div class="d-flex">
-<div class="card m-3" style="width: 18rem;" >
-<div class="card-body">
-<ul>
-    <li>
-      <strong>Nome:</strong> <%= restaurant.name %>
-    </li>
+  <h1 class="text-center mt-3">Lista de Restaurantes</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+    <div class="col-12 col-lg-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <ul>
+              <li>
+                <strong>Nome:</strong> <%= restaurant.name %>
+              </li>
+            </ul>
+          </div>
+          <%= link_to "Sobre", restaurant_path(restaurant), class: "btn btn-primary" %>
+        </div>
+      </div>
+        <% end %>
+    </div>
 
-</ul>
-</div>
-<%= link_to "Sobre", restaurant_path(restaurant), class: "btn btn-primary" %>
-</div>
-  <% end %>
+    <%= link_to 'Create a Restaurant', new_restaurant_path, class: 'btn btn-primary' %>
   </div>
-
-</div>
