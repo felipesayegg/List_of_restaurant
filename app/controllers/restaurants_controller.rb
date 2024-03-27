@@ -22,6 +22,13 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    @restaurant = Restaurant.find(params[id])
+    if @restaurant.update
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :edit, status :unprocessable_entity
+    end
+
   end
 
   def update
@@ -33,6 +40,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params_require(:restaurant).permit(:name, :addres, :phone_number, :category)
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
   end
+
 end
