@@ -9,3 +9,7 @@
 <p><%= @restaurant.phone_number %></p>
 
 </div>
+
+
+<%= link_to "Editar", edit_restaurant_path(@restaurant) %>
+<%= button_to "Excluir", restaurant_path(@restaurant), method: :delete, data: { confirm: "Tem certeza que deseja excluir este restaurante?" }, class: "btn btn-danger" %>
