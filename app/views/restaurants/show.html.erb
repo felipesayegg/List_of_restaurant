@@ -1,15 +1,39 @@
 
 
-<div class="conteiner">
-
-<h2> <%= @restaurant.name %> </h2>
-
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.category %></p>
-<p><%= @restaurant.phone_number %></p>
-
-</div>
-
-
-<%= link_to "Editar", edit_restaurant_path(@restaurant) %>
-<%= button_to "Excluir", restaurant_path(@restaurant), method: :delete, data: { confirm: "Tem certeza que deseja excluir este restaurante?" }, class: "btn btn-danger" %>
+    <div class="card">
+      <div class="card__title">
+        <div class="icon">
+          <%= link_to root_path do %>
+            <i class="fa fa-arrow-left"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h2> <%= @restaurant.name %> </h2>
+            <p class="sub"><%= @restaurant.phone_number %></p>
+            <p class="price"><%= @restaurant.category %></p>
+          </div>
+          <div class="image">
+           <%= image_tag "restaurant.jpg" %>
+          </div>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatem nam pariatur voluptate perferendis, asperiores aspernatur! Porro similique consequatur, nobis soluta minima, quasi laboriosam hic cupiditate perferendis esse numquam magni.</p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+          <div class="reviews">
+            <ul class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+            </ul>
+            <span>(64 reviews)</span>
+          </div>
+        </div>
+      </div>
+    </div>
