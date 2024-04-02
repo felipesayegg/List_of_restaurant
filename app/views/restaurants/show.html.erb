@@ -1,11 +1,39 @@
 
 
-<div class="conteiner">
-
-<h2> <%= @restaurant.name %> </h2>
-
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.category %></p>
-<p><%= @restaurant.phone_number %></p>
-
-</div>
+    <div class="card">
+      <div class="card__title">
+        <div class="icon">
+          <%= link_to root_path do %>
+            <i class="fa fa-arrow-left"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="card__body">
+        <div class="half">
+          <div class="featured_text">
+            <h2> <%= @restaurant.name %> </h2>
+            <p class="price mt-2"><%= @restaurant.category %></p>
+          </div>
+          <div class="image">
+           <%= image_tag "restaurant.jpg" %>
+          </div>
+          <%= link_to "Editar",  edit_restaurant_path(@restaurant), class: "btn btn-primary mt-3" %>
+        </div>
+        <div class="half">
+          <div class="description">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptatem nam pariatur voluptate perferendis, asperiores aspernatur! Porro similique consequatur, nobis soluta minima, quasi laboriosam hic cupiditate perferendis esse numquam magni.</p>
+          </div>
+          <span class="stock"><i class="fa fa-pen"></i> In stock</span>
+          <div class="reviews">
+            <ul class="stars">
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star"></i></li>
+              <li><i class="fa fa-star-o"></i></li>
+            </ul>
+            <span>(64 reviews)</span>
+          </div>
+        </div>
+      </div>
+    </div>
