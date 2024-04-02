@@ -12,12 +12,12 @@
         <div class="half">
           <div class="featured_text">
             <h2> <%= @restaurant.name %> </h2>
-            <p class="sub"><%= @restaurant.phone_number %></p>
-            <p class="price"><%= @restaurant.category %></p>
+            <p class="price mt-2"><%= @restaurant.category %></p>
           </div>
           <div class="image">
            <%= image_tag "restaurant.jpg" %>
           </div>
+          <%= link_to "Editar",  edit_restaurant_path(@restaurant), class: "btn btn-primary mt-3" %>
         </div>
         <div class="half">
           <div class="description">

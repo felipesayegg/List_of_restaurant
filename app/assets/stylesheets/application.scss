@@ -11,3 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "components/cardshow";
+
+.card-title a {
+  text-decoration: none; /* Remove o sublinhado */
+}
